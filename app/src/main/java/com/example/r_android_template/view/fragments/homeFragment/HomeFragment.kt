@@ -1,18 +1,15 @@
 package com.example.r_android_template.view.fragments.homeFragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.r_android_template.R
 import com.example.r_android_template.databinding.HomeFragmentBinding
-import com.example.r_android_template.service.Service
-import com.google.gson.Gson
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     companion object {
