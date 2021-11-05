@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">r_android_template</string>
+    <string name="estate_number">Numer posiadłości %1$s</string>
+    <string name="show_estate_number">Pokaż numer nieruchomości</string>
+</resources>
