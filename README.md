@@ -38,6 +38,7 @@ List of features ready and TODOs for future development
 * Estates List
 * Button which show saved estate number 
 * Save estate id on item click
+* Unit tests
 
 
 ## Status
