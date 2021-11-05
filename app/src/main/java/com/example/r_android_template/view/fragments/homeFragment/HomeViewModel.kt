@@ -1,8 +1,11 @@
 package com.example.r_android_template.view.fragments.homeFragment
 
+import android.util.Log
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.example.r_android_template.data.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -16,18 +19,20 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
-    private var _idLiveData: MutableLiveData<String> = MutableLiveData()
-    val idLiveData: LiveData<String>
+    private var _idLiveData: MutableLiveData<Int> = MutableLiveData()
+    val idLiveData: LiveData<Int>
         get() = _idLiveData
 
 
+    // save id
     @DelicateCoroutinesApi
-    fun saveID(estateNo: String) {
+    fun saveID(id: Int) {
         GlobalScope.launch(Dispatchers.IO) {
-            repository.saveId(estateNo)
+            repository.saveId(id)
         }
     }
 
+    //retrieve id
     @DelicateCoroutinesApi
     fun getID() {
         GlobalScope.launch(Dispatchers.IO) {
