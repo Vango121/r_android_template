@@ -17,7 +17,7 @@
         tools:text="Estate number 563199/1112" />
 
     <TextView
-        android:id="@+id/landTextView"
+        android:id="@+id/textViewLand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -32,6 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewEstateNumber"/>
     <TextView
+        android:id="@+id/textViewArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
@@ -40,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageViewMap"
         app:layout_constraintStart_toEndOf="@id/imageViewMap"/>
     <TextView
-        android:id="@+id/districtTextView"
+        android:id="@+id/textViewdistrict"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
