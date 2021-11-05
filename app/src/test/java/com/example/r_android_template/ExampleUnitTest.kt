@@ -26,20 +26,23 @@ class ExampleUnitTest {
 
 class ServiceObjectTest {
     val model = Service.returnServiceObject()
+
     @Test
-    fun checkData(){
-        assertEquals(1,model[0].id)
-        assertEquals("123456/5432",model[0].estateNo)
-        assertEquals(23.1242312312435345,model[0].area)
-        assertEquals("Nordrhein-Westfale",model[0].land)
-        assertEquals("Wertheim",model[0].district)
+    fun checkData() {
+        assertEquals(1, model[0].id)
+        assertEquals("123456/5432", model[0].estateNo)
+        assertEquals(23.1242312312435345, model[0].area)
+        assertEquals("Nordrhein-Westfale", model[0].land)
+        assertEquals("Wertheim", model[0].district)
     }
+
     @Test
-    fun is_array_size_correct(){
-        assertEquals(model.size,15)
+    fun is_array_size_correct() {
+        assertEquals(model.size, 15)
     }
 
 }
+
 class OneTimeObserver<T>(private val handler: (T) -> Unit) : Observer<T>, LifecycleOwner {
     private val lifecycle = LifecycleRegistry(this)
 
@@ -54,26 +57,31 @@ class OneTimeObserver<T>(private val handler: (T) -> Unit) : Observer<T>, Lifecy
         lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     }
 }
+
 @RunWith(
-    RobolectricTestRunner::class)
-class RepositoryTest{
-//    lateinit var instrumentationContext: Context
-    private lateinit var viewmodel : HomeViewModel
+    RobolectricTestRunner::class
+)
+class RepositoryTest {
+    //    lateinit var instrumentationContext: Context
+    private lateinit var viewmodel: HomeViewModel
     val context = ApplicationProvider.getApplicationContext<Context>()
+
     @Before
-    fun setup(){
+    fun setup() {
         viewmodel = HomeViewModel(Repository(context))
         viewmodel.saveID(3)
     }
+
     fun <T> LiveData<T>.observeOnce(onChangeHandler: (T) -> Unit) {
         val observer = OneTimeObserver(handler = onChangeHandler)
         observe(observer, observer)
     }
+
     @Test
-    fun is_data_saving(){
+    fun is_data_saving() {
         viewmodel.getID()
-        viewmodel.idLiveData.observeOnce{
-            assertEquals(3,it)
+        viewmodel.idLiveData.observeOnce {
+            assertEquals(3, it)
         }
 
     }
