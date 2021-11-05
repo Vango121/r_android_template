@@ -1,5 +1,8 @@
 package com.example.r_android_template.service
 
+import com.example.r_android_template.models.ServiceModel
+import com.google.gson.Gson
+
 object Service {
 
     private const val estateJsonString = """
@@ -111,4 +114,7 @@ object Service {
             }
         ]
     """
+
+    fun returnServiceObject(): ServiceModel = Gson().fromJson(estateJsonString,ServiceModel::class.java)
+
 }
