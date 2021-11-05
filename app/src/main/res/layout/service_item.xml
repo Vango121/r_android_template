@@ -13,7 +13,7 @@
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/imageViewMap"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/estate_number" />
+        tools:text="Estate number 563199/1112" />
 
     <TextView
         android:id="@+id/landTextView"
