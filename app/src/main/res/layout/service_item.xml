@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <TextView
+        android:id="@+id/textViewEstateNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/imageViewMap"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/estate_number" />
+
+    <TextView
+        android:id="@+id/landTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/textViewEstateNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Land Nordrhein-Westfale" />
+    <ImageView
+        android:id="@+id/imageViewMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewEstateNumber"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginStart="10dp"
+        tools:text="Area 1.00 ha"
+        app:layout_constraintTop_toBottomOf="@id/imageViewMap"
+        app:layout_constraintStart_toEndOf="@id/imageViewMap"/>
+    <TextView
+        android:id="@+id/districtTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/textViewEstateNumber"
+        app:layout_constraintTop_toBottomOf="@id/imageViewMap"
+        tools:text="District Creglingen" />
 </androidx.constraintlayout.widget.ConstraintLayout>

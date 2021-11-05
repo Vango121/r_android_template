@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">r_android_template</string>
+    <string name="estate_number">Estate number %1$s</string>
+    <string name="land">Land %1$s</string>
 </resources>
