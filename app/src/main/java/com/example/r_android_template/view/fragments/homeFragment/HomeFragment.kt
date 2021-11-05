@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.example.r_android_template.R
 import com.example.r_android_template.databinding.HomeFragmentBinding
+import com.example.r_android_template.service.Service
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,8 +30,33 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    var clicked = false
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.serviceRecyclerView.adapter = HomeAdapter(Service.returnServiceObject(), {
+            viewModel.saveID(it.estateNo!!)
+        }, requireContext())
+        viewModel.idLiveData.observe(viewLifecycleOwner) {
+            if (clicked) {
+                Toast.makeText(
+                    context,
+                    resources.getString(R.string.estate_number, it),
+                    Toast.LENGTH_SHORT
+                ).show()
+                clicked = false
+            }
+
+        }
+        setupOnClick()
+    }
+
+    //method to setup and handle button onClick
+    fun setupOnClick() {
+        binding.buttonShowEstate.setOnClickListener {
+            clicked = true
+            viewModel.getID()
+
+        }
     }
 
 }
